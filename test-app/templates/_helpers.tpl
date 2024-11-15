@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "nginx-app2.chart" -}}
+{{- define "test-app.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "nginx-app2.labels" -}}
-helm.sh/chart: {{ include "nginx-app2.chart" . }}
-{{ include "nginx-app2.selectorLabels" . }}
+{{- define "test-app.labels" -}}
+helm.sh/chart: {{ include "test-app.chart" . }}
+{{ include "test-app.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "nginx-app2.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "nginx-app2.name" . }}
+{{- define "test-app.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "test-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "nginx-app2.serviceAccountName" -}}
+{{- define "test-app.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "nginx-app2.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "test-app.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
