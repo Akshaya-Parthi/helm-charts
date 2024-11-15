@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: web-app
   pullPolicy: IfNotPresent
   tag: "151120240646c17c3699"
 
