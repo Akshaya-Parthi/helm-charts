@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: test-app
+  repository: 739275447850.dkr.ecr.ap-south-1.amazonaws.com/test-app
   pullPolicy: IfNotPresent
   tag: "151120240646a18b3788"
 
