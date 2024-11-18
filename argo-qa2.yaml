@@ -27,6 +27,7 @@ spec:
         argocd-image-updater.argoproj.io/{{path.basename}}.update-strategy: latest
         argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
         argocd-image-updater.argoproj.io/git-branch: main
+        argocd-image-updater.argoproj.io/write-back-target: "helmvalues:/{{path.basename}}/values-qa2.yaml"
     spec:
       syncPolicy:
         automated:
