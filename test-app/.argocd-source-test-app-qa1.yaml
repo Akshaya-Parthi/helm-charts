@@ -4,5 +4,5 @@ helm:
     value: 739275447850.dkr.ecr.ap-south-1.amazonaws.com/test-app
     forcestring: true
   - name: image.tag
-    value: 181120240646a18b3111
+    value: 181120240646a18b3222
     forcestring: true
