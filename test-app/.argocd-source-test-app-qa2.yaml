@@ -1,8 +1,0 @@
-helm:
-  parameters:
-  - name: image.name
-    value: 739275447850.dkr.ecr.ap-south-1.amazonaws.com/test-app
-    forcestring: true
-  - name: image.tag
-    value: 181120240646a18b3444
-    forcestring: true
